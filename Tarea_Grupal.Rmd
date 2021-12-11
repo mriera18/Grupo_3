@@ -17,6 +17,7 @@ Se abordará un caso de tipo exploratorio, con el propósito de determinar la ub
 #### 1. Método ORLoca
 
 
+
 #### 2. Proceso de Jerarquía Analítica (AHP)
 
 **Alternativas de selección**
@@ -29,6 +30,33 @@ Se abordará un caso de tipo exploratorio, con el propósito de determinar la ub
 - Volumen de residuos.
 - Ubicación geográfica.
 - Impacto social - ambiental.
+
+
+##  Se procede armar la matriz
+Criterios:
+c1 : densidad poblacional
+c2: crecimiento poblacional
+c3: volumen de residuos
+c4: ubicación geográfica
+c5: impacto social-ambiental
+
+Alternativas:
+P1
+P2
+P3
+P4
+
+## a colocar valos de 0 a 9  - escala de Saati
+	C1	C2	C3	C4	C5
+C1	1				
+C2		1			
+C3			1		
+C4				1	
+C5					1
+![image](https://user-images.githubusercontent.com/95756862/145688943-10c5d820-5607-470f-846c-1792d1ce3f37.png)
+
+## CONSISTENCIA DE MATRIZ: ver https://www.math.ucla.edu/~anderson/rw1001/library/base/html/kappa.html
+https://cran.r-project.org/web/packages/FuzzyAHP/vignettes/examples.html
 
 ```{r setup, include=FALSE}
 library(readr)
