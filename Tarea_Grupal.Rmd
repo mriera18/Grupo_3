@@ -5,6 +5,31 @@ date: "11/12/2021"
 output: html_document
 ---
 
+## Caso de Estudio: Ubicación de sitios de tranasferencia de residuos en la ciudad de Quito, Ecuador
+
+Se abordará un caso de tipo exploratorio, con el propósito de determinar la ubicación más adecuada para la instalación de sitios de transferencia de residuos urbanos en la ciudad de Quito.
+
+### Datos
+
+### Métodos utilizados:
+
+
+#### 1. Método ORLoca
+
+
+#### 2. Proceso de Jerarquía Analítica (AHP)
+
+**Alternativas de selección**
+- Parque 1
+- Parque 2
+
+**Criterios:**
+- Densidad poblacional.
+- Crecimiento poblacional.
+- Volumen de residuos.
+- Ubicación geográfica.
+- Impacto social - ambiental.
+
 ```{r setup, include=FALSE}
 library(readr)
 empresas <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSoscPk0Y_eMo7hVRk-oAgw1x6QfRWR9P8nPTEppCYHAE9zwsSup4O5Z9UHtOYUVKzLO9scFZf4neLg/pub?output=csv")
