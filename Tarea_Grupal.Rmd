@@ -36,10 +36,10 @@ Se abordará un caso de tipo exploratorio, con el propósito de determinar la ub
 
 ##  Se procede armar la matriz
 Criterios:
-c1 : densidad poblacional
-c2: crecimiento poblacional
-c3: volumen de residuos
-c4: ubicación geográfica
+c1 :Indicador: densidad poblacional - preferible alta
+c2: crecimiento poblacional - preferible alto
+c3: volumen de residuos generados - Indicador: kg/per capita - preferible alto
+c4: ubicación geográfica (cercania a vias de acceso principales)
 c5: impacto social-ambiental
 
 Alternativas:
