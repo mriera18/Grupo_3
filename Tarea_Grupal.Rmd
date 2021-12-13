@@ -5,7 +5,7 @@ date: "11/12/2021"
 output: html_document
 ---
 
-## Caso de Estudio: Ubicación de sitios de tranasferencia de residuos en la ciudad de Quito, Ecuador
+## Caso de Estudio: Ubicación de sitios de transferencia de residuos en la ciudad de Quito, Ecuador
 
 Se abordará un caso de tipo exploratorio, con el propósito de determinar la ubicación más adecuada para la instalación de sitios de transferencia de residuos urbanos en la ciudad de Quito.
 
@@ -21,8 +21,10 @@ Se abordará un caso de tipo exploratorio, con el propósito de determinar la ub
 #### 2. Proceso de Jerarquía Analítica (AHP)
 
 **Alternativas de selección**
-- Parque 1
-- Parque 2
+- Parque 1: La Cruz
+- Parque 2: Ciudadela Ibarra
+- Parque 3: España
+- Parque 4: Arbolito
 
 **Criterios:**
 - Densidad poblacional.
