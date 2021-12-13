@@ -7,7 +7,7 @@ output: html_document
 
 ## Caso de Estudio: Ubicación de sitios de transferencia de residuos en la ciudad de Quito, Ecuador
 
-Se abordará un caso de tipo exploratorio, con el propósito de determinar la ubicación más adecuada para la instalación de sitios de transferencia de residuos urbanos en la ciudad de Quito.
+Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito.
 
 ### Datos
 
@@ -27,34 +27,54 @@ Se abordará un caso de tipo exploratorio, con el propósito de determinar la ub
 - Parque 4: Arbolito
 
 **Criterios:**
-- Densidad poblacional.
-- Crecimiento poblacional.
-- Volumen de residuos.
-- Ubicación geográfica.
-- Impacto social - ambiental.
-
-
-##  Se procede armar la matriz
 Criterios:
-c1 :Indicador: densidad poblacional - preferible alta
-c2: crecimiento poblacional - preferible alto
-c3: volumen de residuos generados - Indicador: kg/per capita - preferible alto
+c1 :densidad poblacional - preferible alta
+c2: Facilidad de instalacion  - preferible alto
+c3: volumen de demanda (toneladas de alimento)
 c4: ubicación geográfica (cercania a vias de acceso principales)
-c5: impacto social-ambiental
 
-Alternativas:
-P1
-P2
-P3
-P4
 
-## a colocar valos de 0 a 9  - escala de Saati
-	C1	C2	C3	C4	C5
-C1	1				
-C2		1			
-C3			1		
-C4				1	
-C5					1
+Matriz de criterios
+## a colocar valos de 1 a 9  - escala de Saaty
+	C1	C2	C3	C4
+C1	1	1/2	1/5	3	
+C2	2	1	1/3	5	
+C3	5	3	1	7	
+C4	1/3	1/5	1/7	1	
+
+Matriz de alternativas C1
+## a colocar valos de 1 a 9  - escala de Saaty
+	A1	A2	A3	A4
+A1	1	5	7	1/2
+A2	1/5	1	2	1/7
+A3	1/7	1/2	1	1/9	
+A4	2	7 	9	1
+
+Matriz de alternativas C2
+## a colocar valos de 1 a 9  - escala de Saaty
+	A1	A2	A3	A4
+A1	1	2	4	1/5
+A2	1/2	1	1/2	1/9
+A3	1/4	2	1	1/7	
+A4	5	9 	7	1
+
+Matriz de alternativas C3
+## a colocar valos de 1 a 9  - escala de Saaty
+	A1	A2	A3	A4
+A1	1	7	9	2
+A2	1/7	1	2	1/5
+A3	1/9	1/2	1	1/7	
+A4	1/2	5 	7	1
+
+Matriz de alternativas C4
+## a colocar valos de 1 a 9  - escala de Saaty
+	A1	A2	A3	A4
+A1	1	4	2	1/5
+A2	1/4	1	2	1/7
+A3	1/2	1/2	1	1/9	
+A4	5	 7 	9	1
+
+
 ![image](https://user-images.githubusercontent.com/95756862/145688943-10c5d820-5607-470f-846c-1792d1ce3f37.png)
 
 ## CONSISTENCIA DE MATRIZ: ver https://www.math.ucla.edu/~anderson/rw1001/library/base/html/kappa.html
