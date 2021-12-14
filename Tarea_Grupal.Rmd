@@ -28,7 +28,34 @@ Se trabajó con los resultados obtenidos en el trabajo de investigación realiza
 
 #### 1. Método ORLoca
 
+**Coordenadas de los puntos de ubicación:**
 
+- Parque 1: La Luz (-0.14608703953411817, -78.47976960272207)
+- Parque 2: Ciudadela Ibarra (-0.2966791546368687, -78.56231390149335)
+- Parque 3: España (-0.25933825401926136, -78.52948688799921)
+- Parque 4: Arbolito (-0.2108757506647951, -78.49682275703417)
+
+```{r}
+library(orloca)
+
+parques = loca.p(c(-0.14608703953411817, -0.2966791546368687, -0.25933825401926136, -0.2108757506647951), c(-78.47976960272207, -78.56231390149335, -78.52948688799921, -78.49682275703417))
+plot(parques)
+summary(parques)
+```
+
+**Distancia mínima**
+```{r}
+dmin <- distsummin(parques)
+dmin
+```
+
+
+Evaluamos la función y el gradiente en el punto obtenido:
+
+```{r}
+distsum(o = parques, x = dmin[1], y = dmin[2])
+distsumgra(o = parques, x = dmin[1], y = dmin[2])
+```
 
 #### 2. Proceso de Jerarquía Analítica (AHP)
 
