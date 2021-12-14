@@ -21,7 +21,7 @@ Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de dete
 #### 2. Proceso de Jerarquía Analítica (AHP)
 
 **Alternativas de selección**
-- Parque 1: La Cruz
+- Parque 1: La Luz
 - Parque 2: Ciudadela Ibarra
 - Parque 3: España
 - Parque 4: Arbolito
