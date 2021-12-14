@@ -5,11 +5,23 @@ date: "11/12/2021"
 output: html_document
 ---
 
+AUTORES:
+MORTARA Verónica Aída
+NICOLAO GARCIA Jose Ingnacio
+NIEZWIIDA Sonia Romina
+NOVILLO V. Sylvia M.
+NUÑEZ Sonia
+QUEMEL Renata
+TABONE Luciana
+RIERA MARIA 
+
 ## Caso de Estudio: Ubicación de sitios de transferencia de residuos en la ciudad de Quito, Ecuador
 
 Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito.
 
 ### Datos
+
+Se trabajó con los resultados obtenidos en el trabajo de investigación realizado por Sarzosa (2020), en la cual se determinó las mejores ubicaciones de X-Docks para la distribución de alimentos en casos de emergencia por riesgo biológico en el Distrito Metropolitano de Quito, Ecuador.
 
 ### Métodos utilizados:
 
