@@ -13,7 +13,7 @@ NOVILLO V. Sylvia M.
 NUÑEZ Sonia
 QUEMEL Renata
 TABONE Luciana
-RIERA MARIA 
+RIERA María
 
 ## Caso de Estudio: Ubicación de sitios de transferencia de residuos en la ciudad de Quito, Ecuador
 
@@ -124,6 +124,91 @@ library(FuzzyAHP)
 comparisonMatrix = pairwiseComparisonMatrix(comparisonMatrix)
 show(comparisonMatrix)
 ```
+**Pesos de criterios**
+
+```{r}
+weights = calculateWeights(comparisonMatrix)
+print(weights)
+```
+
+
+**Comparación de Alternativas. Criterio: Densidad Poblacional**
+
+```{r}
+values0 = c(1, 5, 7, 1/2, 1/5, 1, 2, 1/7, 1/7, 1/2, 1, 1/9, 2, 7, 9, 1)
+values0 = matrix(values0, nrow = length(values0)/length(weights@weights), ncol = length(weights@weights), byrow = TRUE)
+values0 = pairwiseComparisonMatrix(values0)
+consistencyRatio(values0)
+values0
+weightsv0 = calculateWeights(values0)
+print(weightsv0)
+```
+
+**Comparación de Alternativas. Criterio: Facilidad de instalación**
+
+```{r}
+values1 = c(1, 2, 4, 1/5, 1/2, 1, 1/2, 1/9, 1/4, 2, 1, 1/7, 5, 9, 7, 1)
+values1 = matrix(values1, nrow = length(values1)/length(weights@weights), ncol = length(weights@weights), byrow = TRUE)
+values1 = pairwiseComparisonMatrix(values1)
+consistencyRatio(values1)
+values1
+weightsv1 = calculateWeights(values1)
+print(weightsv1)
+```
+
+**Comparación de Alternativas. Criterio: Volumen de demanda**
+
+```{r}
+values2 = c(1, 7, 9, 2, 1/7, 1, 2, 1/5, 1/9, 1/2, 1, 1/7, 1/2, 5, 7, 1)
+values2 = matrix(values2, nrow = length(values2)/length(weights@weights), ncol = length(weights@weights), byrow = TRUE)
+values2 = pairwiseComparisonMatrix(values2)
+consistencyRatio(values2)
+values2
+weightsv2 = calculateWeights(values2)
+print(weightsv2)
+```
+
+**Comparación de Alternativas. Criterio: Ubicación geográfica**
+
+```{r}
+values3 = c(1, 4, 2, 1/5, 1/4, 1, 2, 1/7, 1/2, 1/2, 1, 1/9, 5, 7, 9, 1)
+values3 = matrix(values3, nrow = length(values3)/length(weights@weights), ncol = length(weights@weights), byrow = TRUE)
+values3 = pairwiseComparisonMatrix(values3)
+consistencyRatio(values3)
+values3
+weightsv3 = calculateWeights(values3)
+print(weightsv3)
+```
+
+**Construccion matriz values**
+
+```{r}
+values = c(0.3308, 0.0791, 0.0483, 0.5419,0.1796, 0.0652, 0.0825, 0.6727,0.5419, 0.0791, 0.0483, 0.3308,0.1796, 0.0825, 0.0652, 0.6727)
+tvalues=t(values)
+tvalues= matrix(tvalues,nrow = length(tvalues)/length(weights@weights), ncol = length(weights@weights))
+tvalues
+```
+
+
+**Jerarquizacion final**
+
+```{r}
+result = calculateAHP(weights, tvalues)
+print(result)
+```
+```{r}
+rank = compareResults(result)
+print(rank)
+```
+
+```{r}
+result = cbind(tvalues, result, rank)
+colnames(result) = c("Densidad Pobl.", "Facilidad de Inst.", "Demanda", "Ubicación","Resultado","Ranking")
+
+print(result)
+```
+
+
 
 ![image](https://user-images.githubusercontent.com/95756862/145688943-10c5d820-5607-470f-846c-1792d1ce3f37.png)
 
