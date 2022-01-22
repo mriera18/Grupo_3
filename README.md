@@ -1,7 +1,12 @@
 # Grupo_3
 
 ## Fecha de revisión entrega final: 2022 01 22 12 37
-Trabajo evaluado - **Aprobado**
+Trabajo evaluado - **Aprobado sujeto a completar**
+
+Agragar Bibliografía y Citas
+Eliminar lineas de ejemplo del archivo Rmd
+
+
 
 Maestrandos:
 
@@ -14,5 +19,5 @@ Maestrandos:
 * TABONE Luciana
 * RIERA María
 
-Calificación *10*
-Felicitaciones !!! muy buen trabajo
+Calificación *pendiente*
+
