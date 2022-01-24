@@ -8,14 +8,14 @@ output: html_document
 AUTORES:
 MORTARA Verónica Aída
 NICOLAO GARCIA Jose Ingnacio
-NIEZWIIDA Sonia Romina
+NIEZWIDA Sonia Romina
 NOVILLO V. Sylvia M.
 NUÑEZ Sonia
 QUEMEL Renata
 TABONE Luciana
 RIERA María
 
-## Caso de Estudio: Ubicación de sitios de transferencia de residuos en la ciudad de Quito, Ecuador
+## Caso de Estudio: Ubicación más adecuada de  puntos cross- docking para Quito, Ecuador.
 
 Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito.
 
@@ -43,7 +43,7 @@ plot(parques)
 summary(parques)
 ```
 
-**Distancia mínima**
+**Distancia mín##
 ```{r}
 dmin <- distsummin(parques)
 dmin
@@ -243,3 +243,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+##Resultados 
+##Ubicaciones 
+
+
+
