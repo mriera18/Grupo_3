@@ -17,14 +17,16 @@ RIERA María
 
 ## Caso de Estudio: Ubicación más adecuada de  puntos cross- docking para Quito, Ecuador.
 
-Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito.
-
+Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito. Describir la problemática /caso de estudio  en cuestión -  ( Silvia/Romina)
 ### Datos
 
 Se trabajó con los resultados obtenidos en el trabajo de investigación realizado por Sarzosa (2020), en la cual se determinó las mejores ubicaciones de X-Docks para la distribución de alimentos en casos de emergencia por riesgo biológico en el Distrito Metropolitano de Quito, Ecuador.
+ampliar datos tomads de la tesis, en base los cuales se  aplica la metodología (Silvia/Romina)
 
 ### Métodos utilizados:
-
+Importancia de AHP y ORLOCA  para  facility location  (María)-  (facloc)
+Método orloca: María
+ahp: Luciana y Verónica
 
 #### 1. Método ORLoca
 
@@ -243,8 +245,7 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-##Resultados 
-##Ubicaciones 
-
+##Resultados y comparación de méstodos ( distinguir las mejores ubicaciones) -
+## conclusiones 
 
 
