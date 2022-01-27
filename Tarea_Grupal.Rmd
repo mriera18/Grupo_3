@@ -76,17 +76,17 @@ distsumgra(o = parques, x = dmin[1], y = dmin[2])
 #### 2. Resultados Proceso de Jerarquía Analítica
 
 En el primer paso del AHP se elabora la estructura jerárquica del problema planteado. Se determina como meta global “seleccionar la mejor localización del punto de cross-docking” y se establecieron los siguientes criterios como los más relevantes para seleccionar la mejor solución:
--	C1: Densidad poblacional: se considera preferible un valor alto.
--	C2: Facilidad de instalación: se considera preferible un valor alto
--	C3: Volumen de demanda: se considera preferible un valor alto (medida en toneladas de alimento)
--	C4: Ubicación geográfica: se considera preferible la cercanía a las vías de acceso principales.
+- C1: Densidad poblacional: se considera preferible un valor alto.
+- C2: Facilidad de instalación: se considera preferible un valor alto
+- C3: Volumen de demanda: se considera preferible un valor alto (medida en toneladas de alimento)
+- C4: Ubicación geográfica: se considera preferible la cercanía a las vías de acceso principales.
 
 Las cuatro alternativas consideradas para la localización son:
--	Parque 1: La Luz
--	Parque 2: Ciudadela Ibarra
--	Parque 3: España
--	Parque 4: Arbolito
--	
+- Parque 1: La Luz
+- Parque 2: Ciudadela Ibarra
+- Parque 3: España
+- Parque 4: Arbolito
+
 En la figura 3 se presenta la estructura jerárquica del problema abordado:
 
 ![image](https://user-images.githubusercontent.com/96081014/151419358-cd08bcce-cbfc-4f50-87bb-b5e8e57efbfe.png)
@@ -219,8 +219,18 @@ colnames(result) = c("Densidad Pobl.", "Facilidad de Inst.", "Demanda", "Ubicaci
 
 print(result)
 ```
-
-
-
 ![image](https://user-images.githubusercontent.com/95756862/145688943-10c5d820-5607-470f-846c-1792d1ce3f37.png)
+
+Como se observa a lo largo del desarrollo de la metodología propuesta en el entorno Rstudio, el índice de consistencia (consistencyRatio) de cada matriz ha arrojado un valore menor a 0.1. Este es un indicador de suma importancia que permite continuar con el proceso de decisión.
+Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las cuatro alternativas consideradas para este problema de localización. La alternativa con mayor peso es el Parque x con un X%, seguido por el Parque Y con un Y%, en tercer lugar, el Parque z con un z%, y finalmente el Parque W con un w%. Con estos resultados, se puede afirmar que la mejor alternativa de localización del punto de cross-docking es el Parque X. 
+
+### Discusión y conclusiones
+
+
+### Referencias
+
+- Martínez Rodríguez, E. (2007). Aplicación del proceso jerárquico de análisis en la selección de la localización de una pyme. Anuario Jurídico y Económico Escurialense, (40), 523-542. https://dialnet.unirioja.es/servlet/articulo?codigo=2267954
+- Saaty T. L. (2008). Decision making with the analytic hierarchy process. International Journal of Services Sciences, 1(1), 83-98. doi:10.1504/IJSSCI.200.
+- Toskano Hurtado, G. B. (2005). El proceso de análisis jerárquico (AHP) como herramienta para la toma de decisiones en la selección de proveedores (tesis de grado). Universidad Nacional Mayor San Marcos. Recuperada de http://sisbib.unmsm.edu.pe/bibvirtualdata/Tesis/Basic/toskano_hg/toskano_hg.pdf8.017590
+- Xu, Z. y Liao, H. (2014). Intuitionistic fuzzy analytic hierarchy process. IEEE Transactions on Fuzzy Systems, 22(4), 749-761. doi:10.1109/TFUZZ.2013.2272585
 
