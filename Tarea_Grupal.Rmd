@@ -20,12 +20,29 @@ Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de dete
 Se trabajó con los resultados obtenidos en el trabajo de investigación realizado por Sarzosa (2020), en la cual se determinó las mejores ubicaciones de X-Docks para la distribución de alimentos en casos de emergencia por riesgo biológico en el Distrito Metropolitano de Quito, Ecuador.
 ampliar datos tomads de la tesis, en base los cuales se  aplica la metodología (Silvia/Romina)
 
-### Métodos utilizados:
+### Metodología:
 Importancia de AHP y ORLOCA  para  facility location  (María)-  (facloc)
 Método orloca: María
-ahp: Luciana y Verónica
 
-#### 1. Método ORLoca
+#### Proceso analítico de Jerarquías
+Cuando se requiere utilizar metodologías de apoyo a la toma de decisiones en escenarios de múltiples dimensiones de evaluación, suele utilizarse el Proceso Analítico de Jerarquía (AHP, por sus siglas en inglés). La jerarquización mediante el AHP permite tomar decisiones en base a criterios múltiples y trabaja en forma sencilla, lógica y estructurada (Martínez Rodríguez, 2007). Se basa en la disgregación del problema complejo en una estructura jerárquica multinivel de objetivos o metas, criterios, subcriterios y alternativas (Xu y Liao, 2014). El proceso requiere que quien toma las decisiones proporcione evaluaciones objetivas y/o subjetivas, respecto a la importancia relativa de cada uno de los criterios que se seguirán para tomar la decisión, especificando su preferencia con respecto a cada una de las alternativas de decisión referida a cada criterio (Toskano Hurtado, 2005). El resultado del AHP muestra la prioridad total de las alternativas de decisión respecto a la meta (Saaty, 2008). 
+En un ambiente de certidumbre, esta metodología permite incluir datos cuantitativos referidos a las alternativas de decisión, asimismo admite la incorporación de aspectos cualitativos que suelen quedarse fuera del análisis debido a su complejidad para ser medidos pero que pueden ser relevantes en algunos casos. 
+En este trabajo, se obtuvo un ordenamiento de los puntos cross-docking considerados a partir de la ponderación global de los mismos y para su desarrollo se emplea el lenguaje de programación R mediante la aplicación RStudio y se utiliza el paquete FuzzyAHP. Para el desarrollo del AHP se efectuaron los siguientes pasos (Saaty, 2008):
+1) Construcción de la estructura jerárquica, donde se desglosa el problema en sus componentes relevantes y se lo representa de forma gráfica en función de la meta global, los criterios a ser usados y las alternativas de decisión (Figura 1). 
+
+![image](https://user-images.githubusercontent.com/96081014/151418725-4bda23b9-dcd3-4aa5-b9d5-24d3db80642c.png)
+Figura 1. Estructura jerárquica
+
+2) Establecimiento de las preferencias: los decisores expresan su juicio de valor indicando una preferencia o prioridad con respecto a cada alternativa de decisión en términos de la medida en la que contribuya a cada criterio. Se utilizan matrices de comparaciones pareadas para establecer medidas de prioridad tanto para los criterios como para las alternativas de decisión y para su construcción se emplea la escala de Saaty con valores de 1 a 9, como se muestra en Figura 2, para calificar la importancia relativa de los elementos. 
+
+![image](https://user-images.githubusercontent.com/96081014/151418896-7ac7b328-96ed-4a6d-9745-7620e7c41422.png)
+Figura 2. Escala de Saaty
+
+3) Priorización y sintetización: mediante un proceso matemático se calculan las prioridades relativas locales de cada elemento para cada nodo de la estructura jerárquica. Se realiza un análisis de la calidad de decisión final, examinando la consistencia de juicios de los decisores. Se obtiene la relación o razón de consistencia de Saaty, considerando aceptable los valores menores a 0,1. Si el grado de consistencia es aceptable, puede continuarse con el proceso de decisión. Si el grado de consistencia es inaceptable, quien toma las decisiones debe reconsiderar y modificar sus juicios sobre las comparaciones pareadas antes de continuar con el análisis. Utilizando el principio de composición jerárquica, se obtienen las prioridades globales de los criterios para cada nodo respecto de la meta. Por último, se realiza la síntesis del problema para obtener la prioridad total de las alternativas mediante la agregación multiaditiva de las prioridades globales. Esto permite ordenar el conjunto de las alternativas consideradas y seleccionar la mejor para obtener la meta buscada.
+
+### Desarrollo 
+
+#### 1. Resultado Método ORLoca
 
 **Coordenadas de los puntos de ubicación:**
 
@@ -56,65 +73,65 @@ distsum(o = parques, x = dmin[1], y = dmin[2])
 distsumgra(o = parques, x = dmin[1], y = dmin[2])
 ```
 
-#### 2. Proceso de Jerarquía Analítica (AHP)
+#### 2. Resultados Proceso de Jerarquía Analítica
 
-**Alternativas de selección**
-- Parque 1: La Luz
-- Parque 2: Ciudadela Ibarra
-- Parque 3: España
-- Parque 4: Arbolito
+En el primer paso del AHP se elabora la estructura jerárquica del problema planteado. Se determina como meta global “seleccionar la mejor localización del punto de cross-docking” y se establecieron los siguientes criterios como los más relevantes para seleccionar la mejor solución:
+-	C1: Densidad poblacional: se considera preferible un valor alto.
+-	C2: Facilidad de instalación: se considera preferible un valor alto
+-	C3: Volumen de demanda: se considera preferible un valor alto (medida en toneladas de alimento)
+-	C4: Ubicación geográfica: se considera preferible la cercanía a las vías de acceso principales.
 
-**Criterios:**
-Criterios:
-c1 :densidad poblacional - preferible alta
-c2: Facilidad de instalacion  - preferible alto
-c3: volumen de demanda (toneladas de alimento)
-c4: ubicación geográfica (cercania a vias de acceso principales)
+Las cuatro alternativas consideradas para la localización son:
+-	Parque 1: La Luz
+-	Parque 2: Ciudadela Ibarra
+-	Parque 3: España
+-	Parque 4: Arbolito
+-	
+En la figura 3 se presenta la estructura jerárquica del problema abordado:
 
+![image](https://user-images.githubusercontent.com/96081014/151419358-cd08bcce-cbfc-4f50-87bb-b5e8e57efbfe.png)
+Figura 3: Estructura Jerárquica del problema.
 
-Matriz de criterios
-## a colocar valos de 1 a 9  - escala de Saaty
+Como segundo, paso se establecen las prioridades determinando las preferencias para construir las matrices de comparaciones pareadas que muestran las medidas de prioridad tanto para los criterios como para las alternativas de decisión respecto a cada criterio de selección, según se presentan a continuación:
+
+Matriz de comparacion pareada de criterios
 	C1	C2	C3	C4
 C1	1	1/2	1/5	3	
 C2	2	1	1/3	5	
 C3	5	3	1	7	
 C4	1/3	1/5	1/7	1	
 
-Matriz de alternativas C1
-## a colocar valos de 1 a 9  - escala de Saaty
+Matriz de comparacion pareada de alternativas respecto a C1
 	A1	A2	A3	A4
 A1	1	5	7	1/2
 A2	1/5	1	2	1/7
 A3	1/7	1/2	1	1/9	
 A4	2	7 	9	1
 
-Matriz de alternativas C2
-## a colocar valos de 1 a 9  - escala de Saaty
+Matriz de comparacion pareada de alternativas respecto a C2
 	A1	A2	A3	A4
 A1	1	2	4	1/5
 A2	1/2	1	1/2	1/9
 A3	1/4	2	1	1/7	
 A4	5	9 	7	1
 
-Matriz de alternativas C3
-## a colocar valos de 1 a 9  - escala de Saaty
+Matriz de comparacion pareada de alternativas respecto a C3
 	A1	A2	A3	A4
 A1	1	7	9	2
 A2	1/7	1	2	1/5
 A3	1/9	1/2	1	1/7	
 A4	1/2	5 	7	1
 
-Matriz de alternativas C4
-## a colocar valos de 1 a 9  - escala de Saaty
+Matriz de comparacion pareada de alternativas respecto a C4
 	A1	A2	A3	A4
 A1	1	4	2	1/5
 A2	1/4	1	2	1/7
 A3	1/2	1/2	1	1/9	
 A4	5	 7 	9	1
 
+Estas matrices se ingresaron al Rstudio y se procesaron mediante los siguientes comandos:
 
-**Medición de la consistencia de la matriz de alternativas**
-
+**Medición de la consistencia y priorización de la matriz de criterios**
 
 ```{r}
 comparisonMatrixValues = c(1,1/2,1/5,3,2,1,1/3,5,5,3,1,7,1/3,1/5,1/7,1)
@@ -122,16 +139,12 @@ comparisonMatrix = matrix(comparisonMatrixValues, nrow = 4, ncol = 4, byrow = TR
 library(FuzzyAHP)
 comparisonMatrix = pairwiseComparisonMatrix(comparisonMatrix)
 show(comparisonMatrix)
-```
-**Pesos de criterios**
-
-```{r}
 weights = calculateWeights(comparisonMatrix)
 print(weights)
 ```
 
 
-**Comparación de Alternativas. Criterio: Densidad Poblacional**
+**Medición de consistencia y priorización matriz Cl**
 
 ```{r}
 values0 = c(1, 5, 7, 1/2, 1/5, 1, 2, 1/7, 1/7, 1/2, 1, 1/9, 2, 7, 9, 1)
@@ -143,7 +156,7 @@ weightsv0 = calculateWeights(values0)
 print(weightsv0)
 ```
 
-**Comparación de Alternativas. Criterio: Facilidad de instalación**
+**Medicion de consistencia y priorización matriz C2**
 
 ```{r}
 values1 = c(1, 2, 4, 1/5, 1/2, 1, 1/2, 1/9, 1/4, 2, 1, 1/7, 5, 9, 7, 1)
@@ -155,7 +168,7 @@ weightsv1 = calculateWeights(values1)
 print(weightsv1)
 ```
 
-**Comparación de Alternativas. Criterio: Volumen de demanda**
+**Medicion de consistencia y priorización matriz C3**
 
 ```{r}
 values2 = c(1, 7, 9, 2, 1/7, 1, 2, 1/5, 1/9, 1/2, 1, 1/7, 1/2, 5, 7, 1)
@@ -167,7 +180,7 @@ weightsv2 = calculateWeights(values2)
 print(weightsv2)
 ```
 
-**Comparación de Alternativas. Criterio: Ubicación geográfica**
+**Medicion de consistencia y priorización matriz C4**
 
 ```{r}
 values3 = c(1, 4, 2, 1/5, 1/4, 1, 2, 1/7, 1/2, 1/2, 1, 1/9, 5, 7, 9, 1)
@@ -210,39 +223,4 @@ print(result)
 
 
 ![image](https://user-images.githubusercontent.com/95756862/145688943-10c5d820-5607-470f-846c-1792d1ce3f37.png)
-
-## CONSISTENCIA DE MATRIZ: ver https://www.math.ucla.edu/~anderson/rw1001/library/base/html/kappa.html
-https://cran.r-project.org/web/packages/FuzzyAHP/vignettes/examples.html
-
-```{r setup, include=FALSE}
-library(readr)
-empresas <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSoscPk0Y_eMo7hVRk-oAgw1x6QfRWR9P8nPTEppCYHAE9zwsSup4O5Z9UHtOYUVKzLO9scFZf4neLg/pub?output=csv")
-```
-
-```{r}
-hist(empresas$`Grado de innovación`)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-##Resultados y comparación de méstodos ( distinguir las mejores ubicaciones) -
-## Discusiones y concluisiones
-
 
