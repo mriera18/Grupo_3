@@ -241,7 +241,10 @@ Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las c
 
 ### Referencias
 
+- Brimberg, J. The Fermat—Weber location problem revisited. Mathematical Programming 71, 71–76 (1995). https://doi.org/10.1007/BF01592245
 - Martínez Rodríguez, E. (2007). Aplicación del proceso jerárquico de análisis en la selección de la localización de una pyme. Anuario Jurídico y Económico Escurialense, (40), 523-542. https://dialnet.unirioja.es/servlet/articulo?codigo=2267954
+- Munoz-Marquez, M. (2020). Package ‘orloca.es’. Disponible en: https://cran.r-project.org/web//packages/orloca.es/orloca.es.pdf
+- ReVelle C.S., Eiselt H.A. (2005). Location Analysis. En Encyclopedia of Social Measurement, Volume 2, (pp. 550-556), Elsevier Inc.
 - Saaty T. L. (2008). Decision making with the analytic hierarchy process. International Journal of Services Sciences, 1(1), 83-98. doi:10.1504/IJSSCI.200.
 - Toskano Hurtado, G. B. (2005). El proceso de análisis jerárquico (AHP) como herramienta para la toma de decisiones en la selección de proveedores (tesis de grado). Universidad Nacional Mayor San Marcos. Recuperada de http://sisbib.unmsm.edu.pe/bibvirtualdata/Tesis/Basic/toskano_hg/toskano_hg.pdf8.017590
 - Xu, Z. y Liao, H. (2014). Intuitionistic fuzzy analytic hierarchy process. IEEE Transactions on Fuzzy Systems, 22(4), 749-761. doi:10.1109/TFUZZ.2013.2272585
