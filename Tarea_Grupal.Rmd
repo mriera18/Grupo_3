@@ -72,6 +72,9 @@ summary(parques)
 ```
 
 **Distancia mín##
+
+Buscamos la solución óptima para el problema planteado:
+
 ```{r}
 dmin <- distsummin(parques)
 dmin
@@ -84,6 +87,8 @@ Evaluamos la función y el gradiente en el punto obtenido:
 distsum(o = parques, x = dmin[1], y = dmin[2])
 distsumgra(o = parques, x = dmin[1], y = dmin[2])
 ```
+A partir de la ubicación de los cuatro parques, se utilizó como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda para localizar un único punto en el plano de coordenadas. La solución óptima al problema estudiado fue (-0.2453875 -78.5233017) con una distancia media ponderada de los puntos mínimos y máximos de 0.2316253.
+
 
 #### 2. Resultados Proceso de Jerarquía Analítica
 
