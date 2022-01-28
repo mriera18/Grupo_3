@@ -21,8 +21,20 @@ Se trabajó con los resultados obtenidos en el trabajo de investigación realiza
 ampliar datos tomads de la tesis, en base los cuales se  aplica la metodología (Silvia/Romina)
 
 ### Metodología:
-Importancia de AHP y ORLOCA  para  facility location  (María)-  (facloc)
-Método orloca: María
+
+#### Problema de Fermat-Weber para localización
+
+El análisis para la de ubicación plantas, hace referencia al modelado, formulación y solución de una clase de problemas que tienen en cuenta durante la instalación de un complejo industrial en un espacio determinado. Al hacerlo se consideran factores como las funciones de distancia y el objetivo que emplea el tomador de decisiones (ReVelle y Eiselt, 2005). 
+
+Uno de los métodos utilizados para tal fin es el de suma mínima, también conocido como problema de Fermat-Weber. El problema de ubicación de suma mínima requiere encontrar un punto en ℝN que minimice la suma de las distancias euclidianas ponderadas de los puntos dados. Para ello se tienen puntos fijos que representan clientes o demandas y un nuevo punto que denota la ubicación desconocida de una nueva instalación. Las distancias euclidianas ponderadas son componentes de costo asociados con las interacciones o flujos entre la nueva instalación y sus clientes (Brimberg, 1995). El problema de mínima suma resultante se formula según la Ec. 1.
+
+\begin{equation}
+minimice_W(x) = \sum_{i=1}^{m}w_i {||x - a_i ||}
+\end{equation}
+
+Donde a_i = (a_{il} . . . . . a_{iN})^{T} es la posición conocida del i-ésimo punto de demanda, i = 1 , . . . , m; x = (x_1. . . . . X_N )^{T} es la posición desconocida de la nueva instalación; w_i es una constante de ponderación positiva que convierte la distancia entre la nueva instalación y el punto de demanda i en un costo, i = 1. . . . . metro; y la distancia se mide por la norma euclidiana.
+
+El método de Fermat-Weber ya descrito se utilizó a través del paquete orloca, el cual permite representar un problema de localización con un conjunto finito de puntos de demanda sobre el plano. También considera una función objetivo para representar la suma de los desplazamientos de los usuarios al servicio (Munoz-Marquez, 2020). Para tal fin, se utilizaron las coordenadas geográficas de cada uno de los parques, localizadas por medio de Google Maps y a partir de ellos se realizó el respectivo análisis.
 
 #### Proceso analítico de Jerarquías
 Cuando se requiere utilizar metodologías de apoyo a la toma de decisiones en escenarios de múltiples dimensiones de evaluación, suele utilizarse el Proceso Analítico de Jerarquía (AHP, por sus siglas en inglés). La jerarquización mediante el AHP permite tomar decisiones en base a criterios múltiples y trabaja en forma sencilla, lógica y estructurada (Martínez Rodríguez, 2007). Se basa en la disgregación del problema complejo en una estructura jerárquica multinivel de objetivos o metas, criterios, subcriterios y alternativas (Xu y Liao, 2014). El proceso requiere que quien toma las decisiones proporcione evaluaciones objetivas y/o subjetivas, respecto a la importancia relativa de cada uno de los criterios que se seguirán para tomar la decisión, especificando su preferencia con respecto a cada una de las alternativas de decisión referida a cada criterio (Toskano Hurtado, 2005). El resultado del AHP muestra la prioridad total de las alternativas de decisión respecto a la meta (Saaty, 2008). 
