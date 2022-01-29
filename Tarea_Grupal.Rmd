@@ -405,7 +405,7 @@ Como se observa a lo largo del desarrollo de la metodología propuesta en el ent
 Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las cuatro alternativas consideradas para este problema de localización. La alternativa con mayor peso es el Parque 4 con 46,01%, seguido por el Parque 1 con 40,64%, en tercer lugar, el Parque 2 con 7,59%, y finalmente el Parque 3 con 5,74%. Con estos resultados, se puede afirmar que la mejor alternativa de localización del punto de cross-docking es el Parque 4. 
 
 ### Discusión y conclusiones
-Los dos métodos utilizados en este estudio permitieron resolver el problema de localización planteado. El método Orloca considera la distancia mínima para determinar la localización óptima, mientras que el AHP emplea una valoración subjetiva para priorizar las distintas alternativas de decisión. En ambos casos se llegó a la misma localización
+Los dos métodos utilizados en este estudio permitieron resolver el problema de localización planteado. El método Orloca permite determinar la distancia mínima entrte los distintos puntos evaluados y con ello indentificar la localización óptima. Por su parte, el AHP emplea una valoración subjetiva para priorizar las distintas alternativas de localización consideradas. Pese a estas diferencias, ambas metodologías arrojaron el mismo resultado siendo el Parque 4 la mejor alternativa de localización. 
 
 ### Referencias
 
