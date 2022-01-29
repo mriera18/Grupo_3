@@ -14,11 +14,33 @@ Riera María
 
 ##Caso de estudio: Ubicación más adecuada de puntos cross-docking para Quito, Ecuador
 
-Se abordará un caso de tipo exploratorio/cumulativos, con el propósito de determinar la ubicación más adecuada para la instalación de puntos de cross-dock para productos alimenticios en la ciudad de Quito. Describir la problemática /caso de estudio  en cuestión -  ( Silvia/Romina)
+El presente trabajo utiliza datos obtenidos a partir de un caso de estudio llevado a cabo para la ciudad de Quito, Ecuador. El objetivo general del caso de estudio, fue proponer las mejores ubicaciones de X-Docks para la distribución adecuada de alimentos en caso de una emergencia por riesgo biológico dentro del DMQ (Distrito Metropolitano de Quito). Por ello, para la determinación de las ubicaciones se consideraron como la densidad poblacional de cada una de las parroquias urbanas dentro del distrito.  La determinación de la cantidad de ubicaciones óptimas de X-Docks fue definida mediante un algoritmo de localización basado en la clusterización K-Means.
+La situación problemática de la cual parte el caso de estudio surge en el contexto de pandemia, con la necesidad de distribuir alimentos de la manera más óptima posible en la ciudad con mayor densidad poblacional de Ecuador (CAMICON, 2020; Instituto Nacional de Estadística y Censos (INEC) & Presidencia de la República del Ecuador, 2021). Los X-Docks serían activados en las situaciones con presencia de riesgos biológicos con alta probabilidad de contagio dentro del DMQ (distrito metropolitano de Quito), por lo tanto, para asegurar la eficacia en la distribución de alimentos se necesita considerar las ubicaciones estratégicas óptimas capaces de sustentar la demanda presente y a mediano plazo en el área a su alrededor.
+
 ### Datos
 
-Se trabajó con los resultados obtenidos en el trabajo de investigación realizado por Sarzosa (2020), en la cual se determinó las mejores ubicaciones de X-Docks para la distribución de alimentos en casos de emergencia por riesgo biológico en el Distrito Metropolitano de Quito, Ecuador.
-ampliar datos tomads de la tesis, en base los cuales se  aplica la metodología (Silvia/Romina)
+La metodología de  K- means para el caso de estudio se aplicó considerando variables de tipo poblacional y espacial. Lo que hace el método es comenzar “colocando un centroide en algún lugar o punto aleatorio dentro de los datos, esto lo repite hasta alcanzar la cantidad de clústers planteado. Entonces empieza a calcular las distancias entre cada punto y los centroides, agrupando cada punto con el centroide más cercano y todos los datos que se unan a un centroide, serán denominados como clústers. Después de definir todos los clústers, cambia la posición de los centroides y se recalcula todo, todo esto se repite hasta que la variación del valor del centroide empieza a ser mínima” (SAPUTRA et al., 2020). Así, tras el uso de esta metodología se obtuvieron los siguientes clústers como puntos de X-Docking: Parque “La Luz”, Parque “Ciudadela Ibarra”, Parque “España” y Parque “del Arbolito” (Sarsoza-Vargas, 2020). Para tener una visualización clara y real de donde se ubican los X-Dock dentro del Distrito Metropolitano de Quito, se presenta la Figura 1.
+
+
+![image](https://user-images.githubusercontent.com/30017048/151647075-c67a011b-0ac1-429c-89df-86b92d7f2779.png)
+
+
+Figura 1: Ubicación de los puntos en DMQ
+Fuente: Extraído de Sarzosa Vargas (2020
+
+
+Con este caso de estudio como antecedente, el presente estudio toma como base de los resultados obtenidos en Sarsoza-Vargas (2020), para ser evaluados mediante la aplicación de los métodos de OrLoca y el proceso analítico jerárquico (en inglés Analytic Hierarchy Process – AHP). 
+
+Respecto de a la aplicación ambos métodos, se aplicaron los siguientes criterios de evaluación:
+c1 : Densidad poblacional - preferible alta
+c2: Facilidad de instalación - preferible alto
+c3: Volumen de demanda (toneladas de alimento)
+c4: Ubicación geográfica (cercanía a vías de acceso principales)
+
+El objetivo de este artículo es presentar el resultado y conclusiones obtenidos tras aplicar los métodos de OrLoca y AHP para los puntos/criterios característicos utilizando como soporte el Software Rstudio.
+Se trata de un trabajo de tipo exploratorio al tener compontes de investigación y cumulativos. Se realiza una comparación de puntos alternativos obtenidos de un caso y método previos, dando como resultado la valoración de los mejores puntos de ubicación de cross-docking para la ciudad de Quito considerando los criterios de jerarquización.
+
+#### Palabras clave: cross-docking, AHP, OrLoca, densidad poblacional, facilidad de instalación
 
 ### Metodología:
 
@@ -56,12 +78,12 @@ Figura 2. Escala de Saaty
 
 #### 1. Resultado Método ORLoca
 
-**Coordenadas de los puntos de ubicación:**
+**Coordenadas de los puntos de ubicación:**	
 
-- Parque 1: La Luz (-0.14608703953411817, -78.47976960272207)
-- Parque 2: Ciudadela Ibarra (-0.2966791546368687, -78.56231390149335)
-- Parque 3: España (-0.25933825401926136, -78.52948688799921)
-- Parque 4: Arbolito (-0.2108757506647951, -78.49682275703417)
+- Clúster 1: Parque “La Luz” (-0.14608703953411817, -78.47976960272207)
+- Clúster 2: Parque “Ciudadela Ibarra” (-0.2966791546368687, -78.56231390149335)
+- Clúster 3: Parque “España” (-0.25933825401926136, -78.52948688799921)
+- Clúster 4: Parque “del Arbolito” (-0.2108757506647951, -78.49682275703417)
 
 ```{r}
 library(orloca)
@@ -398,10 +420,14 @@ Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las c
 ### Referencias
 
 - Brimberg, J. The Fermat—Weber location problem revisited. Mathematical Programming 71, 71–76 (1995). https://doi.org/10.1007/BF01592245
+- CAMICON. (2020). LA CÁMARA- Quito, el cantón más poblado del Ecuador en el 2020 – CAMICON. Cámara de La Industria de La Construcción. https://www.camicon.ec/la-camara-quito-el-canton-mas-poblado-del-ecuador-en-el-2020/
+- Instituto Nacional de Estadística y Censos (INEC), & Presidencia de la República del Ecuador. (2021). Ecuador - Registered Activity Level Index 2020, Study base year 2002 = 100 - General information. Catálogo Central de Datos -ECU-INEC-DECON-IE-INA-R-2020-V1.1. https://anda.inec.gob.ec/anda/index.php/catalog/828
 - Martínez Rodríguez, E. (2007). Aplicación del proceso jerárquico de análisis en la selección de la localización de una pyme. Anuario Jurídico y Económico Escurialense, (40), 523-542. https://dialnet.unirioja.es/servlet/articulo?codigo=2267954
 - Munoz-Marquez, M. (2020). Package ‘orloca.es’. Disponible en: https://cran.r-project.org/web//packages/orloca.es/orloca.es.pdf
 - ReVelle C.S., Eiselt H.A. (2005). Location Analysis. En Encyclopedia of Social Measurement, Volume 2, (pp. 550-556), Elsevier Inc.
 - Saaty T. L. (2008). Decision making with the analytic hierarchy process. International Journal of Services Sciences, 1(1), 83-98. doi:10.1504/IJSSCI.200.
+- Saputra, D. M., Saputra, D., & Oswari, L. D. (2020). Effect of Distance Metrics in Determining K-Value in K-Means Clustering Using Elbow and Silhouette Method. 172(Siconian 2019), 341–346. https://doi.org/10.2991/aisr.k.200424.051
+- Sarsoza-Vargas, K. G. (2020). Estudio sobre las Mejores Ubicaciones de X-Docks dentro del Distrito Metropolitano de Quito para una Distribución Adecuada de Alimentos en Casos de Emergencia por Riesgo Biológico Mediante una Clusterización basada en K-Means. Universidad de Las Américas (tesis de grado).
 - Toskano Hurtado, G. B. (2005). El proceso de análisis jerárquico (AHP) como herramienta para la toma de decisiones en la selección de proveedores (tesis de grado). Universidad Nacional Mayor San Marcos. Recuperada de http://sisbib.unmsm.edu.pe/bibvirtualdata/Tesis/Basic/toskano_hg/toskano_hg.pdf8.017590
 - Xu, Z. y Liao, H. (2014). Intuitionistic fuzzy analytic hierarchy process. IEEE Transactions on Fuzzy Systems, 22(4), 749-761. doi:10.1109/TFUZZ.2013.2272585
 
