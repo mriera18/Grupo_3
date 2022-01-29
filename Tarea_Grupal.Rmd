@@ -4,15 +4,15 @@ author: "María Riera"
 date: "11/12/2021"
 output: html_document
 ---
-Autores:
-Mortara  Verónica Aída
-Niezwida Romina
-Novillo Sylvia
-Quemel Renata
-Tabone Luciana
-Riera María 
+**Autores:**
+* Mortara  Verónica Aída
+* Niezwida Romina
+* Novillo Sylvia
+* Quemel Renata
+* Tabone Luciana
+* Riera María 
 
-##Caso de estudio: Ubicación más adecuada de puntos cross-docking para Quito, Ecuador
+## Caso de estudio: Ubicación más adecuada de puntos cross-docking para Quito, Ecuador
 
 El presente trabajo utiliza datos obtenidos a partir de un caso de estudio llevado a cabo para la ciudad de Quito, Ecuador. El objetivo general del caso de estudio, fue proponer las mejores ubicaciones de X-Docks para la distribución adecuada de alimentos en caso de una emergencia por riesgo biológico dentro del DMQ (Distrito Metropolitano de Quito). Por ello, para la determinación de las ubicaciones se consideraron como la densidad poblacional de cada una de las parroquias urbanas dentro del distrito.  La determinación de la cantidad de ubicaciones óptimas de X-Docks fue definida mediante un algoritmo de localización basado en la clusterización K-Means.
 La situación problemática de la cual parte el caso de estudio surge en el contexto de pandemia, con la necesidad de distribuir alimentos de la manera más óptima posible en la ciudad con mayor densidad poblacional de Ecuador (CAMICON, 2020; Instituto Nacional de Estadística y Censos (INEC) & Presidencia de la República del Ecuador, 2021). Los X-Docks serían activados en las situaciones con presencia de riesgos biológicos con alta probabilidad de contagio dentro del DMQ (distrito metropolitano de Quito), por lo tanto, para asegurar la eficacia en la distribución de alimentos se necesita considerar las ubicaciones estratégicas óptimas capaces de sustentar la demanda presente y a mediano plazo en el área a su alrededor.
@@ -22,11 +22,9 @@ La situación problemática de la cual parte el caso de estudio surge en el cont
 La metodología de  K- means para el caso de estudio se aplicó considerando variables de tipo poblacional y espacial. Lo que hace el método es comenzar “colocando un centroide en algún lugar o punto aleatorio dentro de los datos, esto lo repite hasta alcanzar la cantidad de clústers planteado. Entonces empieza a calcular las distancias entre cada punto y los centroides, agrupando cada punto con el centroide más cercano y todos los datos que se unan a un centroide, serán denominados como clústers. Después de definir todos los clústers, cambia la posición de los centroides y se recalcula todo, todo esto se repite hasta que la variación del valor del centroide empieza a ser mínima” (SAPUTRA et al., 2020). Así, tras el uso de esta metodología se obtuvieron los siguientes clústers como puntos de X-Docking: Parque “La Luz”, Parque “Ciudadela Ibarra”, Parque “España” y Parque “del Arbolito” (Sarsoza-Vargas, 2020). Para tener una visualización clara y real de donde se ubican los X-Dock dentro del Distrito Metropolitano de Quito, se presenta la Figura 1.
 
 
-![image](https://user-images.githubusercontent.com/30017048/151647075-c67a011b-0ac1-429c-89df-86b92d7f2779.png)
-
-
-Figura 1: Ubicación de los puntos en DMQ
-Fuente: Extraído de Sarzosa Vargas (2020
+![](https://user-images.githubusercontent.com/30017048/151647075-c67a011b-0ac1-429c-89df-86b92d7f2779.png)
+**Figura 1. Ubicación de los puntos en DMQ**
+**Fuente:** Extraído de Sarzosa Vargas (2020)
 
 
 Con este caso de estudio como antecedente, el presente estudio toma como base de los resultados obtenidos en Sarsoza-Vargas (2020), para ser evaluados mediante la aplicación de los métodos de OrLoca y el proceso analítico jerárquico (en inglés Analytic Hierarchy Process – AHP). 
@@ -40,37 +38,37 @@ c4: Ubicación geográfica (cercanía a vías de acceso principales)
 El objetivo de este artículo es presentar el resultado y conclusiones obtenidos tras aplicar los métodos de OrLoca y AHP para los puntos/criterios característicos utilizando como soporte el Software Rstudio.
 Se trata de un trabajo de tipo exploratorio al tener compontes de investigación y cumulativos. Se realiza una comparación de puntos alternativos obtenidos de un caso y método previos, dando como resultado la valoración de los mejores puntos de ubicación de cross-docking para la ciudad de Quito considerando los criterios de jerarquización.
 
-#### Palabras clave: cross-docking, AHP, OrLoca, densidad poblacional, facilidad de instalación
+##### **Palabras clave:** cross-docking, AHP, OrLoca, densidad poblacional, facilidad de instalación
 
 ### Metodología:
 
-#### Problema de Fermat-Weber para localización
+#### *Problema de Fermat-Weber para localización*
 
 El análisis para la de ubicación plantas, hace referencia al modelado, formulación y solución de una clase de problemas que tienen en cuenta durante la instalación de un complejo industrial en un espacio determinado. Al hacerlo se consideran factores como las funciones de distancia y el objetivo que emplea el tomador de decisiones (ReVelle y Eiselt, 2005). 
 
 Uno de los métodos utilizados para tal fin es el de suma mínima, también conocido como problema de Fermat-Weber. El problema de ubicación de suma mínima requiere encontrar un punto en ℝN que minimice la suma de las distancias euclidianas ponderadas de los puntos dados. Para ello se tienen puntos fijos que representan clientes o demandas y un nuevo punto que denota la ubicación desconocida de una nueva instalación. Las distancias euclidianas ponderadas son componentes de costo asociados con las interacciones o flujos entre la nueva instalación y sus clientes (Brimberg, 1995). El problema de mínima suma resultante se formula según la Ec. 1.
 
 \begin{equation}
-minimice_W(x) = \sum_{i=1}^{m}w_i {||x - a_i ||}
+minimice_W(x) = \sum_{i=1}^{m}w_i {||x - a_i ||}     Ec. (1)
 \end{equation}
 
-Donde a_i = (a_{il} . . . . . a_{iN})^{T} es la posición conocida del i-ésimo punto de demanda, i = 1 , . . . , m; x = (x_1. . . . . X_N )^{T} es la posición desconocida de la nueva instalación; w_i es una constante de ponderación positiva que convierte la distancia entre la nueva instalación y el punto de demanda i en un costo, i = 1. . . . . metro; y la distancia se mide por la norma euclidiana.
+Donde a<sub>i</sub> =(a<sub>il</sub>. . . . . a<sub>iN</sub>)<sup> T </sup> es la posición conocida del i-ésimo punto de demanda, i = 1 , . . . , m; x = (x<sub>1</sub>. . . . . x<sub>N</sub>)<sup>T </sup> es la posición desconocida de la nueva instalación; w_i es una constante de ponderación positiva que convierte la distancia entre la nueva instalación y el punto de demanda i en un costo, i = 1. . . . . metro; y la distancia se mide por la norma euclidiana.
 
 El método de Fermat-Weber ya descrito se utilizó a través del paquete orloca, el cual permite representar un problema de localización con un conjunto finito de puntos de demanda sobre el plano. También considera una función objetivo para representar la suma de los desplazamientos de los usuarios al servicio (Munoz-Marquez, 2020). Para tal fin, se utilizaron las coordenadas geográficas de cada uno de los parques, localizadas por medio de Google Maps y a partir de ellos se realizó el respectivo análisis.
 
-#### Proceso analítico de Jerarquías
+#### *Proceso analítico de Jerarquías*
 Cuando se requiere utilizar metodologías de apoyo a la toma de decisiones en escenarios de múltiples dimensiones de evaluación, suele utilizarse el Proceso Analítico de Jerarquía (AHP, por sus siglas en inglés). La jerarquización mediante el AHP permite tomar decisiones en base a criterios múltiples y trabaja en forma sencilla, lógica y estructurada (Martínez Rodríguez, 2007). Se basa en la disgregación del problema complejo en una estructura jerárquica multinivel de objetivos o metas, criterios, subcriterios y alternativas (Xu y Liao, 2014). El proceso requiere que quien toma las decisiones proporcione evaluaciones objetivas y/o subjetivas, respecto a la importancia relativa de cada uno de los criterios que se seguirán para tomar la decisión, especificando su preferencia con respecto a cada una de las alternativas de decisión referida a cada criterio (Toskano Hurtado, 2005). El resultado del AHP muestra la prioridad total de las alternativas de decisión respecto a la meta (Saaty, 2008). 
 En un ambiente de certidumbre, esta metodología permite incluir datos cuantitativos referidos a las alternativas de decisión, asimismo admite la incorporación de aspectos cualitativos que suelen quedarse fuera del análisis debido a su complejidad para ser medidos pero que pueden ser relevantes en algunos casos. 
 En este trabajo, se obtuvo un ordenamiento de los puntos cross-docking considerados a partir de la ponderación global de los mismos y para su desarrollo se emplea el lenguaje de programación R mediante la aplicación RStudio y se utiliza el paquete FuzzyAHP. Para el desarrollo del AHP se efectuaron los siguientes pasos (Saaty, 2008):
-1) Construcción de la estructura jerárquica, donde se desglosa el problema en sus componentes relevantes y se lo representa de forma gráfica en función de la meta global, los criterios a ser usados y las alternativas de decisión (Figura 1). 
+1) Construcción de la estructura jerárquica, donde se desglosa el problema en sus componentes relevantes y se lo representa de forma gráfica en función de la meta global, los criterios a ser usados y las alternativas de decisión (Figura 2). 
 
-![image](https://user-images.githubusercontent.com/96081014/151418725-4bda23b9-dcd3-4aa5-b9d5-24d3db80642c.png)
-Figura 1. Estructura jerárquica
+![](https://user-images.githubusercontent.com/96081014/151418725-4bda23b9-dcd3-4aa5-b9d5-24d3db80642c.png)
+**Figura 2.** Estructura jerárquica
 
-2) Establecimiento de las preferencias: los decisores expresan su juicio de valor indicando una preferencia o prioridad con respecto a cada alternativa de decisión en términos de la medida en la que contribuya a cada criterio. Se utilizan matrices de comparaciones pareadas para establecer medidas de prioridad tanto para los criterios como para las alternativas de decisión y para su construcción se emplea la escala de Saaty con valores de 1 a 9, como se muestra en Figura 2, para calificar la importancia relativa de los elementos. 
+2) Establecimiento de las preferencias: los decisores expresan su juicio de valor indicando una preferencia o prioridad con respecto a cada alternativa de decisión en términos de la medida en la que contribuya a cada criterio. Se utilizan matrices de comparaciones pareadas para establecer medidas de prioridad tanto para los criterios como para las alternativas de decisión y para su construcción se emplea la escala de Saaty con valores de 1 a 9, como se muestra en Figura 3, para calificar la importancia relativa de los elementos. 
 
-![image](https://user-images.githubusercontent.com/96081014/151418896-7ac7b328-96ed-4a6d-9745-7620e7c41422.png)
-Figura 2. Escala de Saaty
+![](https://user-images.githubusercontent.com/96081014/151418896-7ac7b328-96ed-4a6d-9745-7620e7c41422.png)
+**Figura 3.** Escala de Saaty
 
 3) Priorización y sintetización: mediante un proceso matemático se calculan las prioridades relativas locales de cada elemento para cada nodo de la estructura jerárquica. Se realiza un análisis de la calidad de decisión final, examinando la consistencia de juicios de los decisores. Se obtiene la relación o razón de consistencia de Saaty, considerando aceptable los valores menores a 0,1. Si el grado de consistencia es aceptable, puede continuarse con el proceso de decisión. Si el grado de consistencia es inaceptable, quien toma las decisiones debe reconsiderar y modificar sus juicios sobre las comparaciones pareadas antes de continuar con el análisis. Utilizando el principio de composición jerárquica, se obtienen las prioridades globales de los criterios para cada nodo respecto de la meta. Por último, se realiza la síntesis del problema para obtener la prioridad total de las alternativas mediante la agregación multiaditiva de las prioridades globales. Esto permite ordenar el conjunto de las alternativas consideradas y seleccionar la mejor para obtener la meta buscada.
 
@@ -109,10 +107,10 @@ Evaluamos la función y el gradiente en el punto obtenido:
 distsum(o = parques, x = dmin[1], y = dmin[2])
 distsumgra(o = parques, x = dmin[1], y = dmin[2])
 ```
-A partir de la ubicación de los cuatro parques, se utilizó como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda para localizar un único punto en el plano de coordenadas. La solución óptima al problema estudiado fue (-0.2453875 -78.5233017) con una distancia media ponderada de los puntos mínimos y máximos de 0.2316253. Esta localización queda en el Sector Villaflora de Quito, a unos 6 km del Parque Arbolito (Figura 3).
+A partir de la ubicación de los cuatro parques, se utilizó como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda para localizar un único punto en el plano de coordenadas. La solución óptima al problema estudiado fue (-0.2453875 -78.5233017) con una distancia media ponderada de los puntos mínimos y máximos de 0.2316253. Esta localización queda en el Sector Villaflora de Quito, a unos 6 km del Parque Arbolito (Figura 4).
 
-![image](https://https://drive.google.com/file/d/1qLlMHIriq0rokdcDKHCq4OFo6MOhATp3/view?usp=sharing)
-Figura 3. Localización con orloca.
+
+**Figura 4.** Localización con orloca.
 
 
 
@@ -130,10 +128,10 @@ Las cuatro alternativas consideradas para la localización son:
 - Parque 3: España
 - Parque 4: Arbolito
 
-En la figura 3 se presenta la estructura jerárquica del problema abordado:
+En la Figura 5 se presenta la estructura jerárquica del problema abordado:
 
 ![image](https://user-images.githubusercontent.com/96081014/151419358-cd08bcce-cbfc-4f50-87bb-b5e8e57efbfe.png)
-Figura 3: Estructura Jerárquica del problema.
+**Figura 5.** Estructura Jerárquica del problema.
 
 Como segundo, paso se establecen las prioridades determinando las preferencias para construir las matrices de comparaciones pareadas que muestran las medidas de prioridad tanto para los criterios como para las alternativas de decisión respecto a cada criterio de selección, según se presentan a continuación:
 
@@ -183,7 +181,7 @@ library(FuzzyAHP)
 comparisonMatrix = pairwiseComparisonMatrix(comparisonMatrix)
 
 ## Consistency ratio is: 0.0290735564177979. The pairwise comparison matrix is consist
-ent for calculations.
+##ent for calculations.
 ## [1] 0.02907356
 
 show(comparisonMatrix)
@@ -210,8 +208,7 @@ show(comparisonMatrix)
 weights = calculateWeights(comparisonMatrix)
 print(weights)
 ```
-## w_C_1 w_C_2 w_C_3 w_C_4
-## 0.1320 0.2411 0.5711 0.0557
+
 
 **Medición de consistencia y priorización matriz Cl**
 
@@ -221,8 +218,7 @@ values0 = matrix(values0, nrow = length(values0)/length(weights@weights), ncol =
 values0 = pairwiseComparisonMatrix(values0)
 consistencyRatio(values0)
 
-## Consistency ratio is: 0.0151481519584408. The pairwise comparison matrix is consist
-ent for calculations.
+## Consistency ratio is: 0.0151481519584408.
 ## [1] 0.01514815
 
 values0
@@ -248,8 +244,7 @@ values0
 weightsv0 = calculateWeights(values0)
 print(weightsv0)
 ```
-## w_C_1 w_C_2 w_C_3 w_C_4
-## 0.3308 0.0791 0.0483 0.5419
+
 
 **Medicion de consistencia y priorización matriz C2**
 
@@ -259,8 +254,7 @@ values1 = matrix(values1, nrow = length(values1)/length(weights@weights), ncol =
 values1 = pairwiseComparisonMatrix(values1)
 consistencyRatio(values1)
 
-## Consistency ratio is: 0.0779400453083108. The pairwise comparison matrix is consist
-ent for calculations.
+## Consistency ratio is: 0.0779400453083108.
 ## [1] 0.07794005
 
 values1
@@ -286,8 +280,7 @@ values1
 weightsv1 = calculateWeights(values1)
 print(weightsv1)
 ```
-## w_C_1 w_C_2 w_C_3 w_C_4
-## 0.1796 0.0652 0.0825 0.6727
+
 
 **Medicion de consistencia y priorización matriz C3**
 
@@ -297,8 +290,7 @@ values2 = matrix(values2, nrow = length(values2)/length(weights@weights), ncol =
 values2 = pairwiseComparisonMatrix(values2)
 consistencyRatio(values2)
 
-## Consistency ratio is: 0.0151481519584425. The pairwise comparison matrix is consist
-ent for calculations.
+## Consistency ratio is: 0.0151481519584425.
 ## [1] 0.01514815
 
 values2
@@ -324,8 +316,7 @@ values2
 weightsv2 = calculateWeights(values2)
 print(weightsv2)
 ```
-## w_C_1 w_C_2 w_C_3 w_C_4
-## 0.5419 0.0791 0.0483 0.3308
+
 **Medicion de consistencia y priorización matriz C4**
 
 ```{r}
@@ -334,8 +325,7 @@ values3 = matrix(values3, nrow = length(values3)/length(weights@weights), ncol =
 values3 = pairwiseComparisonMatrix(values3)
 consistencyRatio(values3)
 
-## Consistency ratio is: 0.0779400453083108. The pairwise comparison matrix is consist
-ent for calculations.
+## Consistency ratio is: 0.0779400453083108.
 ## [1] 0.07794005
 
 values3
@@ -361,8 +351,7 @@ values3
 weightsv3 = calculateWeights(values3)
 print(weightsv3)
 ```
-## w_C_1 w_C_2 w_C_3 w_C_4
-## 0.1796 0.0825 0.0652 0.6727
+
 
 **Construccion matriz values**
 
@@ -430,4 +419,5 @@ Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las c
 - Sarsoza-Vargas, K. G. (2020). Estudio sobre las Mejores Ubicaciones de X-Docks dentro del Distrito Metropolitano de Quito para una Distribución Adecuada de Alimentos en Casos de Emergencia por Riesgo Biológico Mediante una Clusterización basada en K-Means. Universidad de Las Américas (tesis de grado).
 - Toskano Hurtado, G. B. (2005). El proceso de análisis jerárquico (AHP) como herramienta para la toma de decisiones en la selección de proveedores (tesis de grado). Universidad Nacional Mayor San Marcos. Recuperada de http://sisbib.unmsm.edu.pe/bibvirtualdata/Tesis/Basic/toskano_hg/toskano_hg.pdf8.017590
 - Xu, Z. y Liao, H. (2014). Intuitionistic fuzzy analytic hierarchy process. IEEE Transactions on Fuzzy Systems, 22(4), 749-761. doi:10.1109/TFUZZ.2013.2272585
+
 
