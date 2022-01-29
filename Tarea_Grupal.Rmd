@@ -362,11 +362,7 @@ tvalues=t(values)
 tvalues= matrix(tvalues,nrow = length(tvalues)/length(weights@weights), ncol = length(weights@weights))
 tvalues
 ```
-## [,1] [,2] [,3] [,4]
-## [1,] 0.3308 0.1796 0.5419 0.1796
-## [2,] 0.0791 0.0652 0.0791 0.0825
-## [3,] 0.0483 0.0825 0.0483 0.0652
-## [4,] 0.5419 0.6727 0.3308 0.6727
+
 
 **Jerarquizacion final**
 
@@ -374,32 +370,20 @@ tvalues
 result = calculateAHP(weights, tvalues)
 print(result)
 ```
-## result
-## [1,] 0.40648809
-## [2,] 0.07593848
-## [3,] 0.05748692
-## [4,] 0.46015682
+
 
 ```{r}
 rank = compareResults(result)
 print(rank)
 ```
-## [,1]
-## [1,] 2
-## [2,] 3
-## [3,] 4
-## [4,] 1
+
 
 ```{r}
 result = cbind(tvalues, result, rank)
 colnames(result) = c("Densidad Pobl.", "Facilidad de Inst.", "Demanda", "Ubicación","Resultado","Ranking")
 print(result)
 ```
-## Densidad Pobl. Facilidad de Inst. Demanda Ubicación Resultado Ranking
-## [1,] 0.3308 0.1796 0.5419 0.1796 0.40648809 2
-## [2,] 0.0791 0.0652 0.0791 0.0825 0.07593848 3
-## [3,] 0.0483 0.0825 0.0483 0.0652 0.05748692 4
-## [4,] 0.5419 0.6727 0.3308 0.6727 0.46015682 1
+
 
 Como se observa a lo largo del desarrollo de la metodología propuesta en el entorno Rstudio, el índice de consistencia (consistencyRatio) de cada matriz ha arrojado un valore menor a 0.1. Este es un indicador de suma importancia que permite continuar con el proceso de decisión.
 Finalmente, se obtiene como resultado la jerarquización u ordenamiento de las cuatro alternativas consideradas para este problema de localización. La alternativa con mayor peso es el Parque 4 con 46,01%, seguido por el Parque 1 con 40,64%, en tercer lugar, el Parque 2 con 7,59%, y finalmente el Parque 3 con 5,74%. Con estos resultados, se puede afirmar que la mejor alternativa de localización del punto de cross-docking es el Parque 4. 
