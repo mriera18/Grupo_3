@@ -109,6 +109,7 @@ distsumgra(o = parques, x = dmin[1], y = dmin[2])
 ```
 A partir de la ubicación de los cuatro parques, se utilizó como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda para localizar un único punto en el plano de coordenadas. La solución óptima al problema estudiado fue (-0.2453875 -78.5233017) con una distancia media ponderada de los puntos mínimos y máximos de 0.2316253. Esta localización queda en el Sector Villaflora de Quito, a unos 6 km del Parque Arbolito (Figura 4).
 
+![](https://user-images.githubusercontent.com/95891708/151679066-d8912be4-2edf-4102-a332-e80f2e69b16d.png)
 
 **Figura 4.** Localización con orloca.
 
