@@ -11,10 +11,8 @@ Eliminar lineas de ejemplo del archivo Rmd
 Maestrandos:
 
 * MORTARA Verónica Aída
-* NICOLAO GARCIA Jose Ingnacio
 * NIEZWIIDA Sonia Romina
 * NOVILLO V. Sylvia M.
-* NUÑEZ Sonia
 * QUEMEL Renata
 * TABONE Luciana
 * RIERA María
